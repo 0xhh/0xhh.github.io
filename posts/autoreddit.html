@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>0xhh</title>
+		<meta charset="UTF-8">
+		<meta name="description" content="I make random ideas into programming projects">
+		<meta name="keywords" content="projects, blog, programming, ideas, saas">
+		<meta name="author" content="0xhh">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="../styles/style.css">
+	</head>
+	<body>
+		<!-- Nav bar -->
+		<nav>
+			<a href="../index.html">Home</a>
+			<a href="../projects.html">Projects</a>
+		</nav>
+		<!-- End of nav bar -->
+
+		<h1>AutoReddit</h1>
+
+		<p>A simple app that helps only fans creators submit their posts on multiple subreddits.</p>
+		<p>You can try out the app here at: <a href="https://autoreddit.herokuapp.com">https://autoreddit.herokuapp.com</a></p>
+
+		<!-- Paragraphs -->
+		<div>
+      	<h4>How did I get the idea?</h4>
+
+				<p>
+					I was browsing <a href="https://reddit.com/r/python">r/Python</a> and
+					found this <a href="https://www.reddit.com/r/Python/comments/mz07m7/what_routine_tasks_do_you_automate_with_python/?utm_source=share&utm_medium=web2x&context=3">post</a>.
+					There are plenty of interesting things in that thread.
+				</p>
+
+        <p>Then, I found this comment,</p>
+
+        <img src="../img/autoreddit/comment.PNG" alt="comment image">
+
+        <p>It was really amazing and it kind of stuck in my head. I thought of making one and started off with Reddit API.</p>
+
+        <h4>Working with the API</h4>
+
+        <p>
+          I used PRAW in the past to communicate with Reddit API but it was all in Python. I want to write this web app using NodeJS,
+          so, I needed some kind of library to work with the Reddit API. I found snoowrap but I dumped it. All I needed was to access
+          user's Reddit account and post an image. But PRAW and Snoowrap would do more than that, so I decided to write OAuth authentication from scratch.
+        </p>
+
+        <p>It was a pain working with Reddit authentication, it took me 4 days to figure out how the authentication works
+          and one more day to figure out how submitting an image post to a subreddit works.
+        </p>
+
+				<h4>A search for the landing page</h4>
+
+				<p>After spending a lot of time in writing a NodeJS script that just does what I want at a bare minimum level.
+					I started the project using NPM and went in the search of bootstrap templates.
+					Finally settled with this <a href="https://www.bootstrapdash.com/product/simple-landing-page/">Simple Landing Page.</a>
+				</p>
+
+				<p>Now the website looks somewhat cool</p>
+				<img src="../img/autoreddit/landing.PNG" alt="autoreddit image">
+
+				<h4>Putting it altogether</h4>
+
+				<p>
+					Then I started integrating image upload by user. It basically uploads an image to imgur and stores the URL
+					to the image as a session variable. The image uploading part happens entirely on the client side.
+					This reduces the usage of server resources. Not to mention but, it took 2 days to work.
+				</p>
+
+				<p>
+					Finally, I put together user registration with the help of express and mongodb,
+					then added a submit page that looks like this.
+				</p>
+
+				<img src="../img/autoreddit/submit.PNG" alt="submit page">
+
+				<p>
+					Once the user hits the submit button, the backend takes care of everything.
+					It uploads the image to 30 subreddits under a minute.
+				</p>
+
+				<h5>
+					Here's a little screenshot from the command line:
+				</h5>
+
+				<img src="../img/autoreddit/working.PNG" alt="working gif">
+
+				<h4>Reaching out to users</h4>
+
+				<p>I did not put a pricing plan and offered the website for free to the users.</p>
+
+				<p>
+					I hosted the app on heroku and wrote a simple python script that sends a message
+					about AutoReddit to the top 15 hot post autors on various adult subreddits. The script has sent messages to more
+					than 250 users from various subreddits. And all I got was 2 replies. One was automated reply and the other one was
+					how the app works. Yay! we got one user!!!
+				</p>
+
+				<p>
+					Sending messages to 250 users also marked my reddit account as spam :(
+				</p>
+
+				<p>Here's a screen shot of users signed up on AutoReddit:</p>
+				<img src = "../img/autoreddit/users.PNG" alt="no of users">
+				<p>1st and 5th are my accounts and I don't think that the 6th one is legit. So, we can say that we now have 3 users.</p>
+
+				<p>
+					I quickly realized that I should spend a lot of time marketing this app. So, I gave up!
+					I'm in my prefinal year, and I need to get a SDE job in a year. Like everyone does I went to
+					Leetcode and started practicing DS and Algo.
+				</p>
+
+				<p>
+					Nevertheless, it was a good experience learning all this new stuff.
+				</p>
+
+				<p>
+					I want to sell the website for 150 USD(absolutely negotiable), and will accept payment in crypto.
+					Feel free to contact me on Twitter or Reddit, links are availble in the bottom section.
+				</p>
+
+		</div>
+		<!-- End of paragraphs -->
+
+
+		<!-- Start of footer section -->
+		<footer>
+			<p>I try to turn random ideas into programming <a href="../projects.html">projects</a></p>
+
+			<p>You can find me on:</p>
+			<div>
+				<a href="https://twitter.com/0xhhhh" target="_blank">Twitter</a>
+				<a href="https://reddit.com/u/0xhhhh" target="_blank">Reddit</a>
+				<a href="https://github.com/0xhh" target="_blank">GitHub</a>
+			</div>
+
+			<!--
+			<div>
+				<h4>Subscribe to newsletter.</h4>
+				<form action="/subscribe" method="post" target="_black">
+					<label for="email">Email Address: </label>
+					<input type="text" name="email" id="email" class="required email">
+					<input type="submit" value="Subscribe">
+				</form>
+			</div>
+			-->
+		</footer>
+		<!-- End of footer section -->
+	</body>
+</html>
